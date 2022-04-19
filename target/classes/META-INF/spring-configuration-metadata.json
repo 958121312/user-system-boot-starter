@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "user.system",
+      "type": "com.zjdx.user.security.properties.UserSystemProperties",
+      "sourceType": "com.zjdx.user.security.properties.UserSystemProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "user.system.access-token-validity-seconds",
+      "type": "java.lang.Integer",
+      "sourceType": "com.zjdx.user.security.properties.UserSystemProperties",
+      "defaultValue": 7200
+    },
+    {
+      "name": "user.system.refresh-token-validity-seconds",
+      "type": "java.lang.Integer",
+      "sourceType": "com.zjdx.user.security.properties.UserSystemProperties",
+      "defaultValue": 259200
+    }
+  ],
+  "hints": []
+}

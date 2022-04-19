@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjdx.user.security.mapper.RolesMapper">
+
+	<select id="queryRolesByAuthority" resultType="com.zjdx.user.security.Roles">
+    SELECT
+	    sr.id,
+	    sr.role_code,
+	    sr.role_name,
+	    sr.enabled,
+	    sr.default_role,
+	    sr.remark,
+	    sr.create_date,
+	    sr.creator,
+	    sr.modify_date,
+	    sr.modifier
+    FROM
+    	sys_roles sr
+	INNER JOIN sys_auth_role_asso sara ON sr.id = sara.role_id
+WHERE
+	sara.authority_id = #{authorityId}
+    </select>
+
+	<select id="listRolesByUserId" resultType="com.zjdx.user.security.Roles">
+		SELECT
+			 sr.id,
+	   		 sr.role_code,
+	   		 sr.role_name,
+	   		 sr.enabled,
+	   		 sr.default_role,
+	   		 sr.remark,
+	   		 sr.create_date,
+	   		 sr.creator,
+	   		 sr.modify_date,
+	   		 sr.modifier
+		FROM
+			sys_roles sr
+		INNER JOIN sys_user_role_asso sura ON sr.id = sura.role_id
+		WHERE
+		sura.user_id = #{userId}
+	</select>
+
+</mapper>

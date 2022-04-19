@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjdx.user.security.mapper.UsersMapper">
+
+    <select id="queryUsersByUsername" resultType="com.zjdx.user.security.Users">
+        select id,
+               user_code,
+               user_abbr_name,
+               username,
+               password,
+               account_type,
+               flag,
+               create_date,
+               creator,
+               modify_date,
+               modifier
+        from sys_users
+        where username = #{username}
+    </select>
+</mapper>
