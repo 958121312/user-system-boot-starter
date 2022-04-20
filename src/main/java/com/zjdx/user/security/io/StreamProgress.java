@@ -3,7 +3,7 @@ package com.zjdx.user.security.io;
 /**
  * Stream进度条
  *
- * @author Looly
+ * @author yuntian
  */
 public interface StreamProgress {
 

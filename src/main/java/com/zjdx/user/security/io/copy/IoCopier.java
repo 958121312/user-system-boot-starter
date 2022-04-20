@@ -9,7 +9,7 @@ import com.zjdx.user.security.io.StreamProgress;
  *
  * @param <S> 拷贝源类型，如InputStream、Reader等
  * @param <T> 拷贝目标类型，如OutputStream、Writer等
- * @author looly
+ * @author yuntian
  * @since 5.7.8
  */
 public abstract class IoCopier<S, T> {

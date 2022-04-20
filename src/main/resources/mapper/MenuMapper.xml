@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjdx.user.security.mapper.MenuMapper">
+    <resultMap id="menuPermitResultMap" type="com.zjdx.user.security.core.menu.vo.MenuPermitResult">
+        <id column="id" property="id"/>
+        <collection property="children" ofType="com.zjdx.user.security.core.menu.vo.MenuPermitResult" column="id" select="listMenuPermit"/>
+        <collection property="permission" ofType="String" column="id" select="listPermission"/>
+    </resultMap>
+
+    <!-- 查询所有菜单及权限，返回至前端做动态路由 -->
+    <select id="listMenuPermit" resultMap="menuPermitResultMap">
+        SELECT sm.id,
+        sm.menu_code,
+        sm.name,
+        sm.path,
+        sm.redirect,
+        sm.component,
+        sm.hidden,
+        sm.scope,
+        sm.icon,
+        sm.title,
+        sm.menu_order,
+        sm.parent_menu_id
+        FROM sys_menu sm
+        <where>
+            <if test="id == null">
+                and sm.parent_menu_id is null
+            </if>
+            <if test="id != null">
+                and sm.parent_menu_id = #{id}
+            </if>
+        </where>
+        ORDER BY sm.menu_order
+    </select>
+
+    <select id="listPermission" resultType="String">
+        SELECT sr.role_code FROM sys_menu sm INNER JOIN sys_menu_role_asso smra ON sm.id = smra.menu_id
+                                             INNER JOIN sys_roles sr ON sr.id = smra.role_id WHERE sm.id = #{id}
+    </select>
+
+</mapper>

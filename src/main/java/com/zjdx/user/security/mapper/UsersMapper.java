@@ -2,7 +2,7 @@ package com.zjdx.user.security.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import com.zjdx.user.security.Users;
+import com.zjdx.user.security.entity.Users;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.stereotype.Repository;
 

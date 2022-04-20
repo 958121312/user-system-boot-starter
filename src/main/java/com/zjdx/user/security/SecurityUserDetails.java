@@ -1,5 +1,6 @@
 package com.zjdx.user.security;
 
+import com.zjdx.user.security.entity.Users;
 import com.zjdx.user.security.utils.FlagUtil;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

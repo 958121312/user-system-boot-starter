@@ -1,4 +1,4 @@
-package com.zjdx.user.security;
+package com.zjdx.user.security.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.zjdx.user.security.base.BaseEntity;

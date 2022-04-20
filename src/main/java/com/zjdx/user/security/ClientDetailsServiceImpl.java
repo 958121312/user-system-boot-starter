@@ -1,5 +1,6 @@
 package com.zjdx.user.security;
 
+import com.zjdx.user.security.entity.Apps;
 import com.zjdx.user.security.mapper.AppsMapper;
 import com.zjdx.user.security.properties.UserSystemProperties;
 import lombok.AllArgsConstructor;

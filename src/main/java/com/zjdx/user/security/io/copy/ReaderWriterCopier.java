@@ -10,7 +10,7 @@ import java.io.*;
 /**
  * {@link Reader} 向 {@link Writer} 拷贝
  *
- * @author looly
+ * @author yuntian
  * @since 5.7.8
  */
 public class ReaderWriterCopier extends IoCopier<Reader, Writer> {

@@ -1,7 +1,7 @@
 package com.zjdx.user.security.authority;
 
 import com.zjdx.user.security.Authority;
-import com.zjdx.user.security.Roles;
+import com.zjdx.user.security.entity.Roles;
 import com.zjdx.user.security.config.SecurityWhiteMetadataSource;
 import com.zjdx.user.security.mapper.AuthorityMapper;
 import com.zjdx.user.security.mapper.RolesMapper;

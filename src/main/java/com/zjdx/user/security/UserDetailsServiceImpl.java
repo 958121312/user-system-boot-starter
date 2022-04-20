@@ -1,5 +1,7 @@
 package com.zjdx.user.security;
 
+import com.zjdx.user.security.entity.Roles;
+import com.zjdx.user.security.entity.Users;
 import com.zjdx.user.security.mapper.RolesMapper;
 import com.zjdx.user.security.mapper.UsersMapper;
 import lombok.AllArgsConstructor;

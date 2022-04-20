@@ -1,5 +1,6 @@
 package com.zjdx.user.security;
 
+import com.zjdx.user.security.entity.Apps;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
